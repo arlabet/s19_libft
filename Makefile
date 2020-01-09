@@ -10,14 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-
 CC = gcc
+
 CFLAGS = -Wall -Werror -Wextra -c
 
 SRC = *.c
 
 OBJ = ${SRC:.c=.o}
+
+NAME = libft.a
 
 all : ${NAME}
 
