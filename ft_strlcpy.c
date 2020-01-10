@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 16:14:31 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/09 11:22:29 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/01/09 13:35:58 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/01/09 16:20:25 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (c >= 65 && c <= 90)
+	if (!dst || !src)
+		return (0);
+	if (size > ft_strlen(src) + 1)
 	{
-		return (c + 32);
+		ft_memcpy(dst, src, ft_strlen(src) + 1);
 	}
-	else
+	else if (size != 0)
 	{
-		return (c);
+		ft_memcpy(dst, src, (size - 1));
+		dst[size - 1] = '\0';
 	}
+	return (ft_strlen(src));
 }

@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 17:10:52 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/08 18:16:58 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/09 11:19:25 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ char	*ft_strchr(const char *s, int c)
 	k = ft_strlen(s_cpy);
 	if (c == 0)
 	{
-		return(&s_cpy[k]);
+		return (&s_cpy[k]);
 	}
 	while (s_cpy[i])
 	{
 		if (s_cpy[i] == c)
 		{
-			return(&s_cpy[i]);
+			return (&s_cpy[i]);
 		}
 		i++;
 	}

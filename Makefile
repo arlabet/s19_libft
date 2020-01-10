@@ -3,37 +3,58 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nsahloum <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/06 10:35:10 by nsahloum          #+#    #+#              #
-#    Updated: 2020/01/07 15:49:07 by nsahloum         ###   ########.fr        #
+#    Created: 2020/01/09 11:40:31 by nsahloum          #+#    #+#              #
+#    Updated: 2020/01/09 16:44:22 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+SRCS	= 	ft_isalnum.c 	\
+			ft_isascii.c 	\
+			ft_isprint.c	\
+			ft_strchr.c		\
+			ft_strlen.c		\
+			ft_strncmp.c	\
+			ft_strrchr.c	\
+			ft_tolower.c	\
+			ft_toupper.c	\
+			ft_isdigit.c	\
+			ft_isalpha.c	\
+			ft_memset.c		\
+			ft_bzero.c		\
+			ft_memmove.c	\
+			ft_memcpy.c		\
+			ft_memccpy.c	\
+			ft_memchr.c		\
+			ft_memcmp.c		\
+			ft_strlcpy.c	\
+			ft_strlcat.c	\
 
-CFLAGS = -Wall -Werror -Wextra -c
+OBJS	= ${SRCS:.c=.o}
 
-SRC = *.c
+NAME	= libft.a
 
-OBJ = ${SRC:.c=.o}
+CC		= gcc
 
-NAME = libft.a
+RM		= rm -f
 
-all : ${NAME}
+CFLAGS	= -Wall -Wextra -Werror
 
-${NAME} : ${OBJ}
-		${CC} ${CFLAGS} ${SRC}
-		ar rc libft.a *.o
+.c.o:
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${OBJ} : ${SRC}
-		${CC} ${CFLAGS}  ${SRC}
+${NAME}:	${OBJS}
+			ar rc ${NAME} ${OBJS}
 
-clean :  
-		rm ${OBJ}
+all:		${NAME}
 
-fclean :
-		rm ${OBJ} ${NAME}
+clean:		
+			${RM} ${OBJS}
 
-re : fclean all
-.PHONY : fclean all
+fclean:		clean
+			${RM} ${NAME}
+
+re:			fclean all
+
+.PHONY:		all clean fclean re

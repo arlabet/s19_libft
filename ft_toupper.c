@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:57:56 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/08 19:48:24 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/09 11:22:57 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@ int	ft_toupper(int c)
 	if (c >= 97 && c <= 122)
 		return (c - 32);
 	else
-		return(c);
+		return (c);
 }
