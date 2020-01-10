@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/09 11:40:31 by nsahloum          #+#    #+#              #
-#    Updated: 2020/01/09 16:44:22 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/01/10 14:27:06 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS	= 	ft_isalnum.c 	\
 			ft_memcmp.c		\
 			ft_strlcpy.c	\
 			ft_strlcat.c	\
+			ft_strnstr.c	\
 
 OBJS	= ${SRCS:.c=.o}
 
