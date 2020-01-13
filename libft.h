@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 16:16:46 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/13 16:56:44 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/13 20:47:19 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ void    *ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *dest, char const *src);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
