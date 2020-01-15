@@ -6,13 +6,13 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:05:33 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/13 17:29:25 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/15 17:57:47 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -26,7 +26,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strcat(char *dest, char *src)
+static char		*ft_strcat(char *dest, char *src)
 {
 	int i;
 	int j;

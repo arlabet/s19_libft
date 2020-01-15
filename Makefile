@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/09 11:40:31 by nsahloum          #+#    #+#              #
-#    Updated: 2020/01/14 20:44:30 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/01/15 16:04:36 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,11 @@ SRCS	= 	ft_isalnum.c 	\
 			ft_substr.c		\
 			ft_strjoin.c	\
 			ft_strtrim.c	\
+			ft_itoa.c		\
+			ft_putchar_fd.c	\
+			ft_putstr_fd.c	\
+			ft_putendl_fd.c	\
+			ft_putnbr_fd.c	\
 
 OBJS	= ${SRCS:.c=.o}
 

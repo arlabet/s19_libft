@@ -6,13 +6,13 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 12:33:25 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/13 14:10:21 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/15 17:56:54 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_lenght(char *src)
+static int	ft_lenght(char *src)
 {
 	int		i;
 
