@@ -6,65 +6,85 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 14:16:33 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/15 19:20:53 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/16 21:14:20 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_wtab(char const *s, char c, char **tab)
+static int		count_words(char *str, char c)
 {
-	size_t	i;
-	size_t	w;
-	size_t	l;
+	int	count;
 
-	w = 0;
-	i = 0;
-	l = 0;
-	while (s[i])
+	count = 0;
+	while (*str)
 	{
-		if (s[i] == c)
-			w++;
-		i++;
-	}
-	if (!(**tab = malloc(w + 1)))
-		return (NULL);
-	return (tab);
-}
-
-static char	**ft_ltab(char const *s, char c)
-{
-	char	**tab;
-	size_t	i;
-	size_t	w;
-	size_t	l;
-
-	tab = ft_wtab(s, c, tab);
-	while (s[i])
-	{
-		if (s[i] == c)
+		while (*str && *str == c)
+			str++;
+		if (*str && *str != c)
 		{
-			if (!(*tab[w] = malloc(l + 1)))
-				return (NULL);
-			w++;
-			l = 0;
+			count++;
+			while (*str && *str != c)
+				str++;
 		}
-		i++;
-		l++;
 	}
+	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	*malloc_word(char *str, char c)
 {
-	char	**tab;
-	size_t	i;
+	char *word;
+	int	i;
 
 	i = 0;
-	tab = ft_ltab(s, c);
-
-	while(s[i])
+	while (str[i] && str[i] != c)
+		i++;
+	if (!(word = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	i = 0;
+	while (str[i] && str[i] != c)
 	{
-		
+		word[i] = str[i];
 		i++;
 	}
+	word[i] = '\0';
+	return (word);
+}
+
+static char	**arr_free(char **tab, int k)
+{
+	while (k)
+	{
+		free(tab[k]);
+		k--;
+	}
+	free(tab);
+	return (0);
+}
+
+char	**ft_split(char *str, char c)
+{
+	char	**arr;
+	int		i;
+
+	if (!str || !c)
+		return (NULL);
+	if (!(arr = (char **)malloc(sizeof(char *) * (count_words(str, c) + 1))))
+		return (NULL);
+	i = 0;
+	while (*str)
+	{
+		while (*str && *str == c)
+			str++;
+		if (*str && *str != c)
+		{
+			if (!(arr[i] = malloc_word(str, c)))
+				arr_free(arr, i);
+			i++;
+			while (*str && *str != c)
+				str++;
+		}
+	}
+	arr[i] = NULL;
+	return (arr);
 }
