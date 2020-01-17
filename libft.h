@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 16:16:46 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/15 16:04:15 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/17 17:11:50 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-char	**ft_split(char *str, char c);
+char	**ft_split(char const *s, char c);
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
