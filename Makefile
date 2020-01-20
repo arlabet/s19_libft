@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/09 11:40:31 by nsahloum          #+#    #+#              #
-#    Updated: 2020/01/17 17:12:10 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/01/20 18:04:58 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,10 +58,10 @@ CFLAGS	= -Wall -Wextra -Werror
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
+$(NAME):	${OBJS}
+			ar rc $(NAME) ${OBJS}
 
-all:		${NAME}
+all:		$(NAME)
 
 clean:		
 			${RM} ${OBJS}

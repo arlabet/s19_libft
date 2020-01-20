@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 19:23:23 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/20 17:44:23 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/20 18:04:17 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ static int	ft_isinset(char const *set, char c)
 	while (set[i])
 	{
 		if (set[i] == c)
-		{
 			return (1);
-		}
 		i++;
 	}
 	return (0);
