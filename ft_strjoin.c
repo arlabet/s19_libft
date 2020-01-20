@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:05:33 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/17 14:13:53 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/20 17:04:14 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char			*ft_strjoin(char const *s1, char const *s2)
 	char *res;
 
 	if (!s1 || !s2)
-		return (0);
+		return (NULL);
 	if (!(res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
 		return (0);
 	ft_strcpy(res, (char *)s1);

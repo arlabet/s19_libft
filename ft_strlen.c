@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 14:20:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/08 14:36:08 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/20 17:11:19 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	while (s[i])
 	{

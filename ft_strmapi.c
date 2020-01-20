@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 13:31:56 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/17 17:54:48 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/20 12:32:26 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	 char			*tmp;
+	char			*tmp;
 
 	if (!s)
 		return (NULL);

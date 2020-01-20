@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 12:33:25 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/15 17:56:54 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/20 16:52:41 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static int	ft_lenght(char *src)
 
 	i = 0;
 	while (src[i])
-	{
 		i++;
-	}
 	return (i);
 }
 
@@ -29,6 +27,8 @@ char		*ft_strdup(char *src)
 	char	*dest;
 	int		i;
 
+	if (!src)
+		return (NULL);
 	i = 0;
 	if (!(dest = malloc((sizeof(char) * ft_lenght(src)) + 1)))
 		return (NULL);

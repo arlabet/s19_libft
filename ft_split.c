@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 14:16:33 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/17 15:33:27 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/20 16:25:18 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char		*ft_strcpy(char *dest, char const *src, char c)
 	return (dest);
 }
 
-static int		n_w(char const *s, char c)
+static int		make_word(char const *s, char c)
 {
 	int	w;
 	int i;
@@ -47,7 +47,7 @@ static int		n_w(char const *s, char c)
 	return (w);
 }
 
-static char		*f_w(char const *s, char c)
+static char		*fill_word(char const *s, char c)
 {
 	char	*w;
 	int		i;
@@ -62,7 +62,7 @@ static char		*f_w(char const *s, char c)
 	return (w);
 }
 
-static char		**t_f(char **t, int i)
+static char		**tab_free(char **t, int i)
 {
 	while (i)
 	{
@@ -80,9 +80,9 @@ char			**ft_split(char const *s, char c)
 	int		j;
 
 	j = 0;
-	if (!s || !c)
+	if (!s)
 		return (NULL);
-	if (!(res = (char **)malloc(sizeof(char *) * (n_w(s, c) + 1))))
+	if (!(res = (char **)malloc(sizeof(char *) * (make_word(s, c) + 1))))
 		return (NULL);
 	i = 0;
 	while (s[j])
@@ -91,8 +91,8 @@ char			**ft_split(char const *s, char c)
 			j++;
 		if (s[j] && s[j] != c)
 		{
-			if (!(res[i] = f_w(&s[j], c)))
-				return (t_f(res, i));
+			if (!(res[i] = fill_word(&s[j], c)))
+				return (tab_free(res, i));
 			i++;
 			while (s[j] && s[j] != c)
 				j++;

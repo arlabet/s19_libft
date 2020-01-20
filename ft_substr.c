@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 20:24:29 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/14 12:03:32 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/20 17:45:15 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	r;
 
 	r = 0;
-	if (!s)
+	if (!s || len < start)
 		return (0);
 	if (start > ft_strlen(s))
 		len = 0;
-	if (len + start > ft_strlen(s))
+	if (len + start > ft_strlen(s) && start < ft_strlen(s))
 		len = (ft_strlen(s) - start);
 	if (!(res = malloc(sizeof(char) * (len + 1))))
 		return (0);

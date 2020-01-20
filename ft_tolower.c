@@ -6,18 +6,14 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 16:14:31 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/09 11:22:29 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/20 17:46:30 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
-	{
 		return (c + 32);
-	}
 	else
-	{
 		return (c);
-	}
 }
