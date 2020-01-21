@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 19:23:23 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/20 18:04:17 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/21 13:29:50 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,13 @@ char		*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*res;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (0);
+	if (set == 0)
+	{
+		res = (char *)s1;
+		return (res);
+	}
 	end = ft_strlen(s1);
 	start = 0;
 	while (ft_isinset(set, s1[start]))
