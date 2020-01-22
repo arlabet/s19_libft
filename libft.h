@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 16:16:46 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/21 17:36:43 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/21 19:05:58 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
-char	*strdup(const char *src);
+char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *dest, char const *src);
 char	*ft_strtrim(char const *s1, char const *set);
