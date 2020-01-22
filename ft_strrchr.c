@@ -17,10 +17,10 @@ char	*ft_strrchr(const char *s, int c)
 	int		k;
 	char	*s_cpy;
 
-	s_cpy = (char *)s;
-	k = (ft_strlen(s) - 1);
 	if (!s)
 		return (0);
+	s_cpy = (char *)s;
+	k = (ft_strlen(s) - 1);
 	if (c == 0)
 		return (&s_cpy[k + 1]);
 	while (k >= 0)

@@ -18,11 +18,11 @@ char	*ft_strchr(const char *s, int c)
 	size_t	k;
 	char	*s_cpy;
 
+	if (!s)
+		return (NULL);
 	s_cpy = (char *)s;
 	i = 0;
 	k = ft_strlen(s_cpy);
-	if (!s)
-		return (NULL);
 	if (!c)
 		return (&s_cpy[k]);
 	while (s_cpy[i])
