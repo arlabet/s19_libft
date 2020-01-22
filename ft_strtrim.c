@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 19:23:23 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/21 13:29:50 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/22 19:43:16 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ char		*ft_strtrim(char const *s1, char const *set)
 		end--;
 	if (end <= start)
 		end = start;
-	if (!(res = malloc(sizeof(char) * (end - start + 1))))
-		return (0);
 	res = ft_substr(s1, start, (end - start));
 	return (res);
 }
