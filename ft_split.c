@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 14:16:33 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/20 16:25:18 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/24 17:55:40 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,11 @@ char			**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
-	j = 0;
 	if (!s)
 		return (NULL);
 	if (!(res = (char **)malloc(sizeof(char *) * (make_word(s, c) + 1))))
 		return (NULL);
+	j = 0;
 	i = 0;
 	while (s[j])
 	{
