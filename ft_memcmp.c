@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 13:05:55 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/24 17:54:09 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/01/24 18:01:44 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*s1_cpy;
 	unsigned char	*s2_cpy;
 
+	s1_cpy = (unsigned char *)s1;
+	s2_cpy = (unsigned char *)s2;
 	if ((!s1 && !s2) || n <= 0)
 		return (0);
 	else if (!s1)
@@ -26,8 +28,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (s1_cpy[0]);
 	if (ft_strlen((const char *)s1) == 0 && ft_strlen((const char *)s2) == 0)
 		return (0);
-	s1_cpy = (unsigned char *)s1;
-	s2_cpy = (unsigned char *)s2;
 	i = 0;
 	while (i < n)
 	{
