@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsahloum <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 13:16:31 by nsahloum          #+#    #+#             */
-/*   Updated: 2019/11/12 11:15:13 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/03/03 13:46:04 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include "libft.h"
 
 int		ft_size_base(char *base)
 {
@@ -41,7 +36,7 @@ int		ft_size_base(char *base)
 	return (i);
 }
 
-void	ft_putnbr_base(int nb, char *base)
+void	ft_putnbr_base_fd(int nb, char *base, int fd)
 {
 	long int nbr;
 
@@ -52,10 +47,10 @@ void	ft_putnbr_base(int nb, char *base)
 	}
 	if (nbr < 0)
 	{
-		ft_putchar('-');
+		ft_putchar_fd('-', fd);
 		nbr = nbr * -1;
 	}
 	if (nbr >= ft_size_base(base))
-		ft_putnbr_base((nbr / ft_size_base(base)), base);
-	ft_putchar(base[nbr % ft_size_base(base)]);
+		ft_putnbr_base_fd((nbr / ft_size_base(base)), base, fd);
+	ft_putchar_fd(base[nbr % ft_size_base(base)], fd);
 }
